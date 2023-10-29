@@ -1,0 +1,25 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.project {
+  position: relative;
+  border: 1px solid rgb(36, 35, 35);
+}
+
+.img-info {
+  position: absolute;
+  inset: 0 0 0 0;
+  width: 200px;
+  opacity: 80%;
+}
+
+.info {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgb(94, 92, 92);

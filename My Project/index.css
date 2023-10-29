@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 10px;
+  color: red;
+}
+
+#mainContent {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40vw, 1fr));
+  gap: 3vh;
+  padding: 2vh;
+}
+
+#mainContent img {
+  max-width: 100%;
+  height: 95%;
+}
