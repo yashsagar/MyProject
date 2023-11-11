@@ -25,7 +25,8 @@
   position: absolute;
   inset: 0 0 0 0;
   width: 200px;
-  height: 100px;
+  height: 10%;
+  width: 10%;
   transition: all 3s ease-in-out;
 }
 
@@ -42,6 +43,7 @@
   text-shadow: 1px 1px 3px rgb(0, 0, 0);
   color: white;
   transition: all 3s ease-in-out;
+  font-size: 0.1vw;
 }
 .project:hover .hover-effect {
   width: 100%;
@@ -50,7 +52,7 @@
 
 .project:hover .info {
   transform: translateY(50%);
-  font-size: 3rem;
+  font-size: 2vw;
   background-color: rgb(128, 127, 127);
   letter-spacing: 0.5rem;
   width: 100%;
