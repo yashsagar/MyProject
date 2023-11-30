@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1d1d1d;
+  margin: 10%;
+}
+
+main {
+  background-color: #fff;
+  display: flex;
+  padding: 2em;
+  gap: 2em 5em;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 1em;
+}
+
+main svg {
+  width: 100px;
+  height: 100px;
+}
