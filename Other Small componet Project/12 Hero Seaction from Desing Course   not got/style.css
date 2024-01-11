@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Playfair Display", serif;
+}
+
+.title-intro,
+a,
+.wrapper {
+  display: flex;
+}
+.wrapper {
+  padding: 15em 18em 10em 18em;
+  flex-direction: column;
+  border: 2px solid green;
+  min-height: 100vh;
+}
+
+.title-intro {
+  align-items: center;
+}
+
+.title-intro h1 {
+  font-size: 6rem;
+  line-height: 1.153;
+  flex: 0.5;
+  font-weight: normal;
+  border: 1px solid red;
+}
+
+.title-intro p {
+  font-family: "Inter", sans-serif;
+  font-size: 2em;
+  line-height: 1.44;
+  font-weight: 300;
+  flex: 0.5;
+  /* padding: 0 3em; */
+  border: 1px solid red;
+}
+
+a {
+  margin-top: auto;
+}
