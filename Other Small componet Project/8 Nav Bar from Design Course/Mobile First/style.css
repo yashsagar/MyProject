@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Nunito", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+
+.main-nav {
+  background-color: #dbe1e8;
+}
+
+.main-nav ul {
+  display: flex;
+  padding: 2em 3em;
+  align-items: center;
+  list-style: none;
+  gap: 2em;
+}
+
+.cart {
+  margin-left: auto;
+  background-color: #c3ccd7;
+  padding: 0.5em 1em;
+  border-radius: 0.3em;
+}
+
+.cart a {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 1.8rem;
+  color: black;
+}
+
+.cart img {
+  width: 19px;
+  height: 19px;
+}
+
+.handBurgerManu {
+  width: 30px;
+  height: 30px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: #0460bc;
+  letter-spacing: -0.1em;
+}
+
+.main-links {
+  display: none;
+}
+
+.nav-close {
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+}
+
+.handburger-nav {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 66%;
+  height: 100%;
+  background-color: rgb(222, 218, 218);
+}
+
+.handburger-nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 10% 8%;
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: black;
+}
