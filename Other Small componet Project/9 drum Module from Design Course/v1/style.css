@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Playfair Display", serif;
+}
+
+body {
+  background-color: #d0e1bb;
+  display: grid;
+  min-height: 100vh;
+  place-content: center;
+}
+
+main {
+  background-color: #fff;
+  padding: 7em;
+  width: 1200px;
+  border-radius: 0.8em;
+  gap: 13.5em;
+}
+
+main,
+.left,
+.right,
+.left a {
+  display: flex;
+}
+
+.left {
+  flex-direction: column;
+  height: 100%;
+  flex: 0.6;
+}
+
+.left a {
+  margin-top: auto;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #406a29;
+  line-height: 1;
+}
+
+.right {
+  flex-wrap: wrap;
+  gap: 1em;
+  flex: 1;
+}
+
+.box {
+  width: 30%;
+  aspect-ratio: 1/1;
+  border-radius: 0.6em;
+  background-size: cover;
+}
+
+.box:nth-child(1) {
+  background-image: url(assets/images/drum1.jpg);
+}
+
+.box:nth-of-type(2) {
+  background-image: url(assets/images/drum3.jpg);
+}
+
+.box:nth-of-type(3) {
+  background-color: #d0e1bb;
+}
+
+.box:nth-of-type(5) {
+  background-color: #bbc8e1;
+}
+
+.box:nth-of-type(6) {
+  background-image: url(assets/images/drum2.jpg);
+}
+
+.left h1 {
+  line-height: 1.13;
+  font-size: 4rem;
+  margin-bottom: 0.65em;
+}
+
+.left p {
+  font-family: "poppins", serif;
+  font-size: 2em;
+}

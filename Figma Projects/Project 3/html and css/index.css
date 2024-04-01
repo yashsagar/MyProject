@@ -1,0 +1,141 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(
+    220deg,
+    rgba(189, 0, 255, 1) 0%,
+    rgba(0, 163, 255, 1) 100%
+  );
+  font-family: "Poppins";
+  background-attachment: fixed;
+}
+
+.main-container {
+  background-color: #221f26;
+  max-width: 330px;
+  margin: 2vh auto;
+  height: 96vh;
+  border-radius: 13px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-list {
+  padding-top: 0.5rem;
+}
+
+.dropdown-list:hover .main-nav {
+  display: block;
+}
+
+.main-nav {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #221f26;
+  margin: 0;
+  text-decoration: none;
+  color: white;
+  width: 50%;
+  height: 100%;
+  z-index: 2;
+  border-top-left-radius: 13px;
+  border-bottom-left-radius: 13px;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1rem;
+  text-shadow: 0px 0px 3px black;
+  margin-top: 3rem;
+}
+
+.main-nav li {
+  padding: 0.5rem 0 0.5rem 1rem;
+  transition: 1s ease;
+}
+
+.main-nav li:hover {
+  background-color: #4497ff;
+  width: 100%;
+  padding: 0.7rem 1rem 0.7rem 2rem;
+  cursor: pointer;
+}
+
+.logo {
+  text-transform: uppercase;
+  color: #2d7dff;
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: -0.1em;
+  width: 100%;
+  text-align: center;
+}
+
+.content {
+  background: #221f26 url("../common-resources/images/bg.jpg");
+  height: 100%;
+  background-blend-mode: screen;
+  background-size: cover;
+  padding: 2rem;
+  position: relative;
+  border-radius: 0.5rem;
+}
+
+.info-container h1 {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 2rem;
+  line-height: 2rem;
+  margin-top: 15vh;
+}
+
+.info-container p {
+  color: #847d93;
+  font-size: 1.5rem;
+  margin: 2rem 0;
+  line-height: 1.5rem;
+}
+
+.cta-btn button {
+  position: relative;
+  padding: 0.7rem 1rem 0.7rem 3rem;
+  background-color: #221f26;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 800;
+  border: 2px solid #4d4d4d;
+  line-height: 1.5rem;
+  /* border-radius: 5px; */
+  margin-top: 2rem;
+}
+
+.cta-btn button::before {
+  content: "";
+  background-image: url("../common-resources/images/arrow.svg");
+  height: 20px;
+  width: 22px;
+  color: #ffffff;
+  position: absolute;
+  left: 0.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

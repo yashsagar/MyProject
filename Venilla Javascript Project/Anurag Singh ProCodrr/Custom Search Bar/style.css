@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #202124;
+}
+
+main {
+  display: flex;
+  min-height: 60vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.logo {
+  width: 90%;
+  max-width: 500px;
+  margin-bottom: 1.5rem;
+}
+
+.search {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid #52565b;
+  /* margin-top: 1.5rem; */
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  gap: 1rem;
+  position: relative;
+}
+
+.search-icon {
+  width: 20px;
+}
+
+.search input {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  color: #a8aaad;
+  font-size: 1.25rem;
+}
+
+.search input:focus {
+  outline: none;
+}
+
+.doodle {
+  position: fixed;
+  bottom: 0px;
+  right: 30px;
+  margin: 0;
+  z-index: -1;
+}
+
+.doodle img {
+  height: 250px;
+}
+
+.search:hover,
+.search:focus-within {
+  background-color: #303134;
+  border-color: #303134;
+}
+
+.search:focus-within {
+  border-radius: 24px 24px 0 0;
+}
+
+.search-close-icon {
+  color: inherit;
+  width: 14px;
+  display: none;
+  cursor: pointer;
+}
+
+.suggestion-wrapper {
+  color: #a8aaad;
+  background-color: #303134;
+  position: absolute;
+  top: 38px;
+  left: -1px;
+  padding: 10px 0 20px 0;
+  width: calc(100% + 2px);
+  /* border: 5px solid #303134; */
+  border-radius: 0 0 24px 24px;
+  display: none;
+}
+
+.suggestion-wrapper p {
+  padding: 0.3em 0 0.3em 2.7em;
+  overflow: hidden;
+  font-size: 1.2rem;
+}
+
+.suggestion-wrapper p:hover {
+  background-color: #3c4043;
+}
+
+.top-border {
+  border-top: 1px solid #52565b;
+}

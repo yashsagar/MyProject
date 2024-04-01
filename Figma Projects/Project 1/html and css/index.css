@@ -1,0 +1,139 @@
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+footer {
+  margin: 20rem 1rem 1rem 1rem;
+}
+
+.challenges {
+  padding: 1rem;
+}
+
+.mainContent {
+  width: 510px;
+  height: 1139px;
+  margin: auto;
+}
+
+.TopBlock {
+  background-color: #5200ff;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.TopBlock::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  content: " ";
+  background-image: url("../common resources/images/bg.jpg");
+  background-size: cover;
+  background-position: 100%;
+  opacity: 22%;
+}
+
+.content {
+  position: relative;
+}
+
+.title {
+  padding: 6.5rem 2.5rem 2rem 2.5rem;
+  text-transform: capitalize;
+  font-family: "Bebas Neue";
+  font-size: 4rem;
+  font-weight: 400;
+}
+
+.info {
+  padding: 0rem 2.5rem 7rem 2.5rem;
+  font-family: Poppins;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 2.25rem;
+}
+
+.BottomBlock {
+  text-align: center;
+  padding: 5rem 2.5rem 6rem 2.5rem;
+}
+
+label {
+  display: block;
+  text-align: left;
+  font-family: Poppins;
+  font-size: 1.12rem;
+  font-weight: 500;
+}
+
+input {
+  width: 100%;
+  height: 2.5rem;
+  margin-top: 0.3rem;
+  background-color: #ebe4e4;
+  font-size: 1.12rem;
+  border: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+#submitBtn {
+  width: 100%;
+  height: 2.5rem;
+  background-color: #5200ff;
+  font-size: 0.8rem;
+  color: white;
+  padding: auto;
+}
+
+@media only screen and (min-width: 770px) {
+  form {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 2rem;
+    text-align: left;
+  }
+
+  #submitBtn {
+    width: auto;
+    padding: 0.8em 2.5em;
+  }
+
+  .mainContent {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1260px) {
+  .mainContent {
+    display: flex;
+    height: 100vh;
+  }
+
+  .TopBlock,
+  .BottomBlock {
+    flex-basis: 0;
+    flex-grow: 1;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 0 10%;
+  }
+
+  .TopBlock {
+    text-align: right;
+  }
+}
