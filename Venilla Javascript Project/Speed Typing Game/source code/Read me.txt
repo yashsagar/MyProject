@@ -1,0 +1,4 @@
+randam quote API = https://api.quotable.io/random
+test = variable.content
+
+Array and string munipulation
