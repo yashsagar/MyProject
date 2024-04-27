@@ -2,7 +2,7 @@
   "name": "swiggy-app-from-akshay-saini",
   "version": "1.0.0",
   "description": "",
-  "main": "App.js",
+  "main": "./src/App.js",
   "dependencies": {
     "abortcontroller-polyfill": "^1.7.5",
     "ansi-styles": "^4.3.0",
@@ -105,7 +105,8 @@
   },
   "scripts": {
     "test": "jest",
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "author": "",
   "license": "ISC",
