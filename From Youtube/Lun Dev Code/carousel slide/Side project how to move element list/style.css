@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+}
+
+.wrapper {
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.carousel .items {
+  width: 100px;
+  height: 100px;
+  background-color: aquamarine;
+}
+
+.carousel,
+.tumbnail {
+  display: flex;
+  gap: 1em;
+  justify-content: flex-end;
+  align-items: center;
+}
+.items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tumbnail {
+  margin-top: 2em;
+}
+
+.tumbnail .items {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.486);
+}
+
+.buttons {
+  text-align: center;
+}
+.buttons button {
+  padding: 0.5em 1.5em;
+}
+
+.btn-next {
+  margin-left: 0.4em;
+}
+
+.wrapper.active .carousel .items:first-child,
+.wrapper.active .tumbnail .items:first-child {
+  background-color: blue;
+  color: #fff;
+}

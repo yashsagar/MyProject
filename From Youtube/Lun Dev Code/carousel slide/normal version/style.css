@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&family=Poppins:wght@400;700&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  background-color: black;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+.main-nav {
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 1rem;
+}
+
+header {
+  width: 80%;
+  max-width: 1140px;
+  margin: auto;
+  height: 50px;
+  position: relative;
+  z-index: 100;
+}
+
+.carosel-wrapper {
+  margin-top: -50px;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.corosel__item-wrapper {
+  position: absolute;
+  inset: 0 0 0 0;
+}
+
+.corosel__item-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.corosel__item-wrapper .content {
+  position: absolute;
+  top: 20%;
+  width: 80%;
+  max-width: 1140;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 30% 0 1%;
+  text-shadow: 0 5px 10px #0004;
+}
+
+.content .title {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-shadow: 0 5px 10px #0004;
+}
+
+.corosel__item-wrapper .author {
+  text-transform: capitalize;
+  letter-spacing: 5px;
+  font-weight: bold;
+  font-size: 3rem;
+  white-space: nowrap;
+}
+
+.corosel__item-wrapper .source {
+  padding-top: 1em;
+}
+
+.btn-wrapper {
+  margin-top: 2em;
+}
+
+.btn-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 140px);
+  grid-template-rows: 40px;
+  letter-spacing: 2px;
+  margin-top: 2em;
+}
+
+.btn-wrapper button {
+  letter-spacing: 2px;
+  font-family: inherit;
+  outline: none;
+  border-radius: 3px;
+}
+
+.see-more-btn {
+  border: none;
+}
+
+.source-code-btn {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  margin-left: 0.5em;
+}
+
+.btn-wrapper button:hover {
+  background-color: #d8d6d6d2;
+  color: black;
+}
+
+.btn-wrapper button:active {
+  background-color: #d8d6d6;
+  color: black;
+}
+
+.thumbnail {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  width: max-content;
+  z-index: 100;
+  display: flex;
+  gap: 20px;
+}
+
+.thumbnail__item {
+  width: 150px;
+  height: 220px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.thumbnail__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.thumbnail__content-wrapper {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  right: 10px;
+}
+
+.thumbnail__content-wrapper .title {
+  font-weight: bold;
+}
+
+.arrow {
+  position: absolute;
+  top: 80%;
+  right: 52%;
+  width: 30%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.arrow button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #eee4;
+  border: none;
+  font-family: monospace;
+  color: #fff;
+  font-weight: bold;
+  font-size: large;
+  transition: 0.5s;
+  z-index: 100;
+}
+
+.arrow button:hover {
+  background-color: #eee;
+  color: #555;
+}
+
+.corosel__item-wrapper:nth-child(2) {
+  z-index: 1;
+}
+
+.content .title,
+.content .author,
+.content .btn-wrapper {
+  transform: translateY(50px);
+  filter: blur(20px);
+  opacity: 0;
+  animation: showContent 0.5s 0.8s linear 1 forwards;
+}
+
+@keyframes showContent {
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+.content .author {
+  animation-delay: 1.2s;
+}
+
+.content .btn-wrapper {
+  animation-delay: 1.6s;
+}
+
+.carosel-wrapper.next .corosel__item-wrapper:nth-child(1) img {
+  width: 150px;
+  height: 220px;
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  border-radius: 20px;
+  animation: showimage 0.5s linear 1 forwards;
+}
+
+@keyframes showimage {
+  to {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    border-radius: 0;
+  }
+}
+
+.carosel-wrapper.next .thumbnail .thumbnail__item:nth-last-child(1) {
+  width: 0;
+  overflow: hidden;
+  animation: shothumbnail 0.5s linear 1 forwards;
+}
+
+@keyframes shothumbnail {
+  to {
+    width: 150px;
+  }
+}
+
+.carosel-wrapper.next .thumbnail {
+  transform: translateX(150px);
+  animation: transformThumbnai 0.5s linear 1 forwards;
+}
+
+@keyframes transformThumbnai {
+  to {
+    transform: translateX(0px);
+  }
+}
+
+/*effect previous item*/
+.carosel-wrapper.prev .corosel__item-wrapper:nth-child(2) {
+  z-index: 2;
+}
+
+.carosel-wrapper.prev .corosel__item-wrapper:nth-child(2) img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: outImage 0.5s linear 1 forwards;
+}
+
+@keyframes outImage {
+  to {
+    width: 150px;
+    height: 220px;
+    border-radius: 20px;
+    left: 50%;
+    bottom: 30px;
+  }
+}
