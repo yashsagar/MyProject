@@ -59,7 +59,7 @@ li {
   object-fit: cover;
 }
 
-.content-wrpper {
+.carousel__item .content-wrpper {
   position: absolute;
   width: 80%;
   max-width: 1140px;
@@ -73,7 +73,6 @@ li {
 .title {
   font-size: 0.6rem;
   letter-spacing: 3px;
-  /* border: var(--test); */
 }
 
 .author {
@@ -102,12 +101,15 @@ li {
 }
 
 .btn-wrapper button:hover,
-.btn-wrapper button:focus {
+.btn-wrapper button:focus,
+.arrow button:hover,
+.arrow button:focus {
   background-color: #d4ffdad0;
   color: var(--secondary-color);
 }
 
-.btn-wrapper button:active {
+.btn-wrapper button:active,
+.arrow button:active {
   background-color: #d4ffdaf0;
 }
 
@@ -131,12 +133,40 @@ li {
   width: 150px;
   border-radius: 20px;
   overflow: hidden;
+  position: relative;
 }
 
 .thumbnail__item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.thumbnail__item .content-wrapper {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  text-shadow: var(--text-shadow);
+}
+
+.arrow {
+  position: absolute;
+  bottom: 20%;
+  z-index: 100;
+  left: 50%;
+  width: 80%;
+  max-width: 1140px;
+  transform: translateX(-50%);
+  /* border: var(--test); */
+}
+
+.arrow button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 @media (max-width: 540px) {
@@ -146,19 +176,19 @@ li {
 }
 
 /* animation */
-
-/* text animation */
-.carousel.next .carousel__item:nth-child(1) {
+.carousel .carousel__item:nth-child(1) {
   z-index: 1;
 }
 
-.carousel.next .carousel__item:nth-child(1) .title,
-.carousel.next .carousel__item:nth-child(1) .author,
-.carousel.next .carousel__item:nth-child(1) .btn-wrapper {
-  transform: translateY(-50px);
+/* text animation */
+
+.carousel .carousel__item:nth-child(1) .title,
+.carousel .carousel__item:nth-child(1) .author,
+.carousel .carousel__item:nth-child(1) .btn-wrapper {
+  transform: translateY(50px);
   filter: blur(20px);
   opacity: 0;
-  animation: textEffect 1s linear 1s forwards;
+  animation: textEffect 0.5s 1s linear forwards;
 }
 
 @keyframes textEffect {
@@ -169,16 +199,16 @@ li {
   }
 }
 
-.carousel.next .carousel__item:nth-child(1) .title {
-  animation-delay: 2.2s !important;
+.carousel .carousel__item:nth-child(1) .title {
+  animation-delay: 2.2s;
 }
 
-.carousel.next .carousel__item:nth-child(1) .author {
-  animation-delay: 1.8s !important;
+.carousel .carousel__item:nth-child(1) .author {
+  animation-delay: 1.8s;
 }
 
-.carousel.next .carousel__item:nth-child(1) .btn-wrapper {
-  animation-delay: 1.4s !important;
+.carousel .carousel__item:nth-child(1) .btn-wrapper {
+  animation-delay: 1.4s;
 }
 
 /* next button animation */
@@ -190,17 +220,16 @@ li {
   border-radius: 20px;
   left: 40%;
   bottom: 30px;
-  animation: nextSlid 1s linear 0.5s forwards;
+  animation: nextSlide 2s linear forwards;
 }
 
-@keyframes nextSlid {
+@keyframes nextSlide {
   to {
     left: 0;
     bottom: 0;
     width: 100%;
     height: 100%;
     border-radius: 0;
-    z-index: 1;
   }
 }
 
@@ -213,6 +242,7 @@ li {
   to {
     width: 150px;
     transform: translateX(0);
+    overflow: hidden;
   }
 }
 
@@ -225,4 +255,40 @@ li {
   to {
     transform: translateX(0px);
   }
+}
+
+/* previuse item style */
+
+.carousel.prev .carousel__item:nth-child(2) img {
+  z-index: 101;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  animation: prevAnimation 1s linear forwards;
+}
+
+@keyframes prevAnimation {
+  to {
+    width: 150px;
+    height: 220px;
+    border-radius: 20px;
+    left: 40%;
+    bottom: 30px;
+  }
+}
+
+.carousel.prev .thumbnail__item {
+  transform: translateX(-130px);
+  animation: prevTumbnail 1s linear forwards;
+}
+
+@keyframes prevTumbnail {
+  to {
+    transform: translateX(0px);
+  }
+}
+
+.carousel.prev .arrow button,
+.carousel.next .arrow button {
+  pointer-events: none;
 }
