@@ -11,17 +11,29 @@
   --secondary-color: #000;
   --accent-color: red;
   --ff: "Poppins", sans-serif;
-  --textShadow: 0 0 10px #000;
+  --textShadow: 0 0 20px #0000006f;
   --test: 1px solid red;
   --btn-active-bgcolor: white;
   --btn-active-color: black;
   --btn-hover-bgcolor: rgb(255, 255, 255);
   --btn-hover-color: black;
 }
-A {
+a {
   text-decoration: none;
   color: inherit;
 }
+
+a:focus-visible,
+a:hover {
+  outline: 1px solid rgba(0, 0, 0, 0.114);
+  outline-offset: 6px;
+}
+
+a:active {
+  color: var(--btn-hover-color);
+  outline-color: var(--btn-hover-color);
+}
+
 ul {
   margin: 0;
   list-style: none;
@@ -35,7 +47,7 @@ button {
   border-radius: 4px;
 }
 
-button:focus,
+button:focus-visible,
 button:hover {
   background-color: var(--btn-hover-bgcolor);
   color: var(--btn-hover-color);
@@ -162,6 +174,17 @@ body {
   height: 220px;
   border-radius: 20px;
   overflow: hidden;
+  position: relative;
+}
+
+.thumbnail-item .content-wrapper {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10px;
+  color: #fff;
+  text-shadow: var(--textShadow);
+  text-transform: capitalize;
 }
 
 .thumbnail-item img {
@@ -191,20 +214,33 @@ body {
   width: 30px;
   height: 30px;
   border-radius: 50%;
+  text-shadow: var(--textShadow);
 }
 
-.wrapper.next .carousel-item:nth-child(1) {
+.wrapper .carousel-item:nth-child(1) {
   z-index: 1;
 }
 
 /* starting default animation */
-.wrapper.next .carousel-item:nth-child(1) .title,
-.wrapper.next .carousel-item:nth-child(1) .author,
-.wrapper.next .carousel-item:nth-child(1) .button-wrapper {
+.wrapper .carousel-item .title,
+.wrapper .carousel-item .author,
+.wrapper .carousel-item .button-wrapper {
   transform: translateY(70px);
   filter: blur(20px);
   opacity: 0;
-  animation: contentMotion 1s linear forwards;
+  animation: contentMotion 1s 1s linear forwards;
+}
+
+.wrapper .carousel-item .title {
+  animation-delay: 1.8s;
+}
+
+.wrapper .carousel-item .author {
+  animation-delay: 1.6s;
+}
+
+.wrapper .carousel-item .button-wrapper {
+  animation-delay: 1.4s;
 }
 
 @keyframes contentMotion {
@@ -212,5 +248,86 @@ body {
     transform: translateY(0);
     filter: blur(0);
     opacity: 1;
+  }
+}
+
+.wrapper.next .carousel-item:nth-child(1) img {
+  position: absolute;
+  width: 150px;
+  height: 220px;
+  left: 40%;
+  bottom: 30px;
+  border-radius: 20px;
+  animation: carouselNextEffect 1s 0.5s linear forwards;
+}
+
+@keyframes carouselNextEffect {
+  to {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    border-radius: 0;
+  }
+}
+
+.wrapper.next .thumbnail-item {
+  transform: translateX(170px);
+  animation: ThumbnailNextEffect 1s 0.5s linear forwards;
+}
+
+@keyframes ThumbnailNextEffect {
+  to {
+    transform: translate(-50%);
+  }
+}
+
+.wrapper.next .thumbnail-item:nth-last-child(1) {
+  width: 0px;
+  animation: outThumbnailExpaind 1s 0.5s linear forwards;
+}
+
+@keyframes outThumbnailExpaind {
+  to {
+    width: 150px;
+    transform: translateX(-50%);
+  }
+}
+
+/* prev style */
+
+.wrapper.prev .carousel-item:nth-child(2) {
+  z-index: 1;
+}
+
+.wrapper.prev .carousel-item:nth-child(2) img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: carouselPrevEffect 1s 0.5s linear forwards;
+}
+
+@keyframes carouselPrevEffect {
+  to {
+    width: 150px;
+    height: 220px;
+    left: 40%;
+    bottom: 30px;
+    border-radius: 20px;
+  }
+}
+
+.wrapper.prev .carousel-item:nth-child(2) .content-wrapper {
+  opacity: 0;
+}
+
+.wrapper.prev .thumbnail-item:nth-child(1) {
+  width: 0;
+  animation: inThumbnailExpaind 1s 0.5s linear forwards;
+}
+
+@keyframes inThumbnailExpaind {
+  to {
+    width: 150px;
   }
 }
