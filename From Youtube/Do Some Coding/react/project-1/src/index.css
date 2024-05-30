@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&family=Poppins:wght@400;500;700&display=swap");
+
+*,
+*::before,
+::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --ff: "Poppins", sans-serif;
+  --primary-color: #d01c28;
+  --secondery-color: #5a5959;
+  --hover-bgcolor: #d0555d;
+  --hover-color: black;
+  --active-bgcolor: #d0555dc2;
+  --active-color: rgba(0, 0, 0, 0.804);
+  --text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+body {
+  margin: 0;
+  font-family: var(--ff);
+}
+
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:active {
+  color: var(--active-color);
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  font-family: inherit;
+  outline: none;
+  border: none;
+  padding: 0.5em 1.5em;
+}
+
+button:hover,
+button:focus-visible {
+  background-color: var(--hover-bgcolor);
+  color: var(--hover-color);
+}
+
+button:active {
+  background-color: var(--active-bgcolor);
+  color: var(--active-color);
+}
+
+.logo {
+  width: 72px;
+  height: 42px;
+}
+
+.main-nav {
+  margin: 1em 0;
+  display: flex;
+  padding: 2em 0;
+  align-items: center;
+  height: 50px;
+  /* border: 1px solid red; */
+}
+
+.wrapper {
+  width: 80%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.main-nav ul {
+  display: flex;
+  margin-inline: auto;
+  gap: 1em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: rgba(35, 35, 35, 0.804);
+}
+
+.btn-login {
+  padding: 0.7em 2.1em;
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.title {
+  font-size: 5.2rem;
+  line-height: 80px;
+  padding-right: 10%;
+  margin-bottom: 0.4em;
+}
+
+.description {
+  width: 60%;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #5a5959dd;
+}
+
+.hero-img {
+  width: 530px;
+  height: 487px;
+  object-fit: cover;
+}
+
+.btn-wrapper {
+  margin-block: 2em;
+  display: flex;
+  gap: 1em;
+}
+
+.btn-shop {
+  background-color: var(--primary-color);
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.btn-category {
+  background-color: transparent;
+  border: 1px solid black;
+  font-weight: bold;
+}
+
+.links-wrapper {
+  display: flex;
+  gap: 1em;
+}
+.links-wrapper img {
+  width: 32px;
+  height: 32px;
+}
+
+.link-title {
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-shadow: var(--text-shadow);
+}
+
+.amazon-icon {
+  margin-top: 4px;
+}
+
+@media (max-width: 1000px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+  main > * {
+    padding: 0;
+    width: 80%;
+    margin: 0 auto;
+  }
+}
