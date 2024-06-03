@@ -4,7 +4,9 @@ const Header = () => {
   return (
     <header className=" main-wrapper flex items-center">
       <div>
-        <img className="w-16 h-16" src={logo} alt="logo" />
+        <Link to={"/"}>
+          <img className="w-16 h-16" src={logo} alt="logo" />{" "}
+        </Link>
       </div>
       <div className=" ml-auto">
         <nav>

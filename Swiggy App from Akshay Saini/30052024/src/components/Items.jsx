@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import downArrow from "../images/downArrow.svg";
 import upArrow from "../images/upArrow.svg";
+import Item from "./Item";
 
 const Items = ({ restData }) => {
   const hideData = {};
@@ -49,7 +50,7 @@ const Items = ({ restData }) => {
                   hideItemList(index);
                 }}
               >
-                <span>{items}</span>
+                <span className="font-bold">{`${items} (${items.length})`}</span>
                 <span className="w-8 h-8">
                   {hideData[index] ? (
                     <img src={downArrow} alt="down arrow" />
@@ -60,7 +61,7 @@ const Items = ({ restData }) => {
               </div>
               <div id={`itemList-${index}`} className="hidden ">
                 {itemsData[items].map((item) => (
-                  <div key={item.id}>{item.name}</div>
+                  <Item key={item.id} item={item} />
                 ))}
               </div>
             </div>
