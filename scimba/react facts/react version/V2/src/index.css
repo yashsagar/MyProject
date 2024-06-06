@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --text-color: 0 0 0;
+  }
+
+  .dark {
+    --bg-color: 0 0 0;
+    --text-color: 255 255 255;
+  }
+}
+
+.main-wrapper {
+  width: 80%;
+  max-width: 1140px;
+  margin: auto;
+}
+
+.test {
+  outline: 1px solid red;
+}
+
+li::before {
+  content: "";
+  display: inline-block;
+  margin: 0 0.75rem 4px 0;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 100%;
+  background: #00abca;
+  vertical-align: middle;
+}
