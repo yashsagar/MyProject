@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-text: 135 132 138;
+  --color-secondary: 18 21 59;
+  --color-bg: 255 249 242;
+}
+
+.main_wrapper {
+  width: 90%;
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.test {
+  border: 1px solid red;
+}

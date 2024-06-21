@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main-wrapper {
+  width: 90%;
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+:root {
+  --secondory-color: 12 97 209;
+}
+
+.test {
+  border: 1px solid red;
+}
+
+.header {
+  @apply text-lg text-black pb-2 font-semibold;
+}

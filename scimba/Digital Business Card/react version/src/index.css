@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg: 35 37 44;
+    --color-card-bg: 245 245 245;
+    --color-card-footer: 213 212 216;
+    --color-text-primary: 0 0 0;
+    --color-text: 74 78 116;
+  }
+
+  .dark {
+    --color-card-bg: 26 27 33;
+    --color-card-footer: 22 22 25;
+    --color-text-primary: 254 254 254;
+    --color-text: 220 220 220;
+  }
+}
+
+.main-wrapper {
+  width: 80%;
+  max-width: 500px;
+  margin: auto;
+}
+
+.test {
+  border: 1px solid red;
+}
+
+#left,
+#right {
+  width: 200px;
+  height: 200px;
+}
