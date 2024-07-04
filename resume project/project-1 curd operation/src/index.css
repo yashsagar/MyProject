@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main-wrapper {
+  width: 94%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+:root {
+  --color-primary: 28 28 34;
+  --color-text-green: 0 255 153;
+  --color-text-primary: 47 51 49;
+}
+
+.test {
+  border: 1px solid red;
+}
