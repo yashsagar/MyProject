@@ -4,6 +4,8 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 // layout import
 import MainLayout from "./layout/MainLayout";
@@ -23,8 +25,18 @@ const router = createBrowserRouter(
 );
 
 function App() {
+  const themecolor = useSelector((state) => state.theme.themeColor);
+  useEffect(() => {
+    const classList = document.documentElement.classList;
+    if (themecolor === "dark") {
+      classList.add("dark");
+    } else {
+      classList.remove("dark");
+    }
+  }, [themecolor]);
+
   return (
-    <div className="bg-color-primary text-white min-h-screen font-roboto">
+    <div className="bg-color-primary text-color-text min-h-screen font-roboto">
       <RouterProvider router={router} />
     </div>
   );

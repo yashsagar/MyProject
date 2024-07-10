@@ -1,59 +1,37 @@
-import { useSelector, useDispatch } from "react-redux";
-import { updateDropdown, updateMood } from "../backend/dropdownSlice";
+import { useSelector } from "react-redux";
+import { useTheme } from "../hooks";
 
 const ThemeDropdown = () => {
-  const showMode = useSelector((state) => state.theme);
-  const dispatch = useDispatch();
-
-  const handelMode = (mood) => {
-    let moodValue = mood;
-    let classList = document.documentElement.classList;
-
-    if (mood === "os") {
-      dispatch(updateMood("os"));
-      if (matchMedia("(prefers-color-scheme:dark)").matches) {
-        moodValue = "dark";
-      } else {
-        moodValue = "light";
-      }
-    }
-
-    classList.remove(...classList);
-    classList.add(moodValue);
-
-    dispatch(updateDropdown(false));
-  };
+  const { themHandel } = useTheme();
+  const dropdown = useSelector((state) => state.theme.dropdown);
 
   return (
-    showMode && (
-      <div className="absolute top-[130%] -right-1 w-28  bg-slate-500 rounded-lg p-2 flex flex-col justify-around z-10">
+    dropdown && (
+      <div className="absolute top-[130%] -right-1 w-28  dark:bg-slate-500  bg-slate-300 rounded-lg p-2 flex flex-col justify-around z-10">
         <div
           onClick={() => {
-            handelMode("light");
-            dispatch(updateMood("light"));
+            themHandel("light");
             localStorage.setItem("mood", "light");
           }}
-          className="hover:bg-black/80 p-2 rounded-md"
+          className="hover:bg-slate-700 hover:text-white p-2 rounded-md"
         >
           Light
         </div>
         <div
           onClick={() => {
-            handelMode("dark");
-            dispatch(updateMood("dark"));
+            themHandel("dark");
             localStorage.setItem("mood", "dark");
           }}
-          className="hover:bg-black/80 p-2 rounded-md"
+          className="hover:bg-slate-700 hover:text-white p-2 rounded-md"
         >
           Dark
         </div>
         <div
           onClick={() => {
-            handelMode("os");
-            dispatch(updateMood("os"));
+            themHandel("os");
             localStorage.setItem("mood", "os");
           }}
-          className="hover:bg-black/80 p-2 rounded-md"
+          className="hover:bg-slate-700 hover:text-white p-2 rounded-md"
         >
           OS Defalut
         </div>

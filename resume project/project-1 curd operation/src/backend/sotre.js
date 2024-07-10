@@ -1,6 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import dropdownReducer from "./dropdownSlice";
+import themeSlice from "./themeSlice";
+import loginSlice from "./loginSlice";
 
 export const store = configureStore({
-  reducer: dropdownReducer,
+  reducer: {
+    login: loginSlice,
+    theme: themeSlice,
+  },
 });
