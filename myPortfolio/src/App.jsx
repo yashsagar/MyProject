@@ -1,5 +1,9 @@
 function App() {
-  return <div className="bg-red-500">test</div>;
+  return (
+    <div className="main-wrapper">
+      <div>info</div>
+      <div>PHOTO</div>
+    </div>
+  );
 }
-
 export default App;

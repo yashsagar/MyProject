@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --bg-default: 248 254 255;
+  --text-default: 0 0 0;
+  --bg-hover: 51 65 85;
+  --text-hover: 255 255 255;
+}
+
+.dark {
+  --bg-default: 6 20 27;
+  --text-default: 255 255 255;
+  --bg-hover: 51 65 85;
+  --text-hover: 255 255 255;
+}
+
+.main-wrapper {
+  width: 90%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.svg {
+  filter: brightness(0) saturate(100%) invert(0%) sepia(1%) saturate(0%)
+    hue-rotate(333deg) brightness(96%) contrast(101%);
+}
+
+.dark .svg {
+  filter: none;
+}
