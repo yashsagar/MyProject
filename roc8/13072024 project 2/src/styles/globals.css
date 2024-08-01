@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-family: "Inter", sans-serif;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  appearance: none;
+  -moz-appearance: textfield;
+}
+
+input[type="checkbox"] {
+  accent-color: black;
+}
+
+.main-wrapper {
+  width: 1440px;
+  max-width: 94%;
+  margin: auto;
+  /* display: #a2a2a2; */
+}
+
+.absolute-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.test {
+  border: 1px solid red;
+}

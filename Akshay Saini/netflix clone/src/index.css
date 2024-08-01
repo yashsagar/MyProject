@@ -1,0 +1,64 @@
+@font-face {
+  font-display: optional;
+  font-family: "Netflix Sans";
+  font-weight: 400;
+  src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Rg.woff2)
+      format("woff2"),
+    url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Rg.woff)
+      format("woff");
+}
+
+@font-face {
+  font-display: optional;
+  font-family: "Netflix Sans";
+  font-weight: 500;
+  src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Md.woff2)
+      format("woff2"),
+    url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Md.woff)
+      format("woff");
+}
+
+@font-face {
+  font-display: optional;
+  font-family: "Netflix Sans";
+  font-weight: 700;
+  src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Bd.woff2)
+      format("woff2"),
+    url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Bd.woff)
+      format("woff");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --col-text-default: 255 255 255;
+  --col-bg-default: 0 0 0;
+  --col-bg-accent: 229 9 20;
+  --col-bg-accent-hover: 193 17 25;
+  --col-logo: 229 9 20;
+}
+
+@layer components {
+  .main-wrapper {
+    width: 90%;
+    max-width: 1440px;
+    margin: auto;
+  }
+
+  .background-img::before {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 0;
+    background-image: url(/public/images/background-img.jpg);
+    z-index: -10;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+.test {
+  border: 1px solid rgb(255, 243, 243);
+}
