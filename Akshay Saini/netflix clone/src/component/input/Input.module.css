@@ -15,6 +15,9 @@
   font-size: inherit;
   border-radius: inherit;
 }
+.input:autofill {
+  background-color: transparent;
+}
 
 .input:focus {
   top: 1/2;

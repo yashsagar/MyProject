@@ -1,11 +1,15 @@
 import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
+import { store } from "./store/store.js";
 import "./index.css";
 
 //import pages
 import App from "./App.jsx";
 import SignIn from "./page/SignIn.jsx";
+import LoginSuccessMessage from "./page/LoginSuccessMessage.jsx";
 
 //import components
+import Test from "./component/Test.jsx";
 
 import {
   createBrowserRouter,
@@ -20,17 +24,16 @@ const router = createBrowserRouter(
       <Route path="/" element={<App />}></Route>
       <Route path="/signin" element={<SignIn />}></Route>
       <Route
-        path="/test"
-        element={
-          <div className="border-2 border-pink-700 h-10 w-full text-lg">
-            <input type="text" {...{ name: "yash" }} />
-          </div>
-        }
+        path="/LoginSuccessMessage"
+        element={<LoginSuccessMessage />}
       ></Route>
+      <Route path="/test" element={<LoginSuccessMessage />}></Route>
     </>
   )
 );
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+  <Provider store={store}>
+    <RouterProvider router={router} />
+  </Provider>
 );

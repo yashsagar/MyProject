@@ -27,16 +27,3 @@ const Input = (props) => {
 };
 
 export default Input;
-
-{
-  /* <input
-  id={id}
-  ref={passRef}
-  name={name}
-  className={styles.input}
-  style={inputStyle}
-  type={type}
-  placeholder=" "
-  autoComplete="off"
-/>; */
-}
